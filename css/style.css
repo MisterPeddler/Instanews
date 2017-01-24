@@ -1,0 +1,9 @@
+div{
+  background-color: green;
+  height:100px;
+  text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 300px;
+}
