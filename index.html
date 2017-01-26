@@ -1,21 +1,37 @@
- <!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
- <head>
-     <title>Instanews</title>
-     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-     <link rel="stylesheet" type="text/css" href="css/style.css" />
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
- </head>
- <body>
+<head>
+    <title>Instanews</title>
+    <link rel="stylesheet" type="text/css" href="build/css/style.min.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-<div></div>
+<body>
 
-   <script
-   src="https://code.jquery.com/jquery-3.1.1.min.js"
-   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-   crossorigin="anonymous"></script>
-  <script src="build/js/main.min.js"></script>
- </body>
- </html>
+    <section>
+        <img src="images/nyt-logo.svg"/>
+        <div class="topics">
+            <h2>Choose a section:</h2>
+            <select>
+             <option value="sections">Sections...</option>
+             <option value="home">Home</option>
+             <option value="science">Science</option>
+             <option value="business">Business</option>
+             <option value="sports">Sports</option>
+             <option value="technology">Business</option>
+             <option value="fashion">fashion</option>
+            </select>
+        </div>
+    </section>
+
+    <footer>
+      <div class="copyright">&#169; Copyright 2016 INSTANEWS</div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="build/js/main.min.js"></script>
+</body>
+
+</html>

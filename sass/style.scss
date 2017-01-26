@@ -1,0 +1,57 @@
+@import 'reset';
+@import 'mixins';
+
+body{
+  background-color: black;
+}
+
+section{
+  min-height: 87vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include tablet {
+      flex-direction:row;
+      // justify-content: flex-start;
+   }
+
+   @include desktop {
+      //  flex-direction:row;
+       justify-content: flex-start;
+    }
+}
+
+.topics{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+   margin: 0 auto;
+   @include tablet {
+       margin: 0;
+    }
+}
+
+select{
+ margin: 0 auto;
+}
+
+img{
+
+}
+
+h2{
+  color:white;
+  padding:15px;
+}
+
+footer{
+  text-align: center;
+  color:#c2c2c2;
+  display:block;
+  width:100%;
+  position : absolute;
+   bottom : 0;
+   height : 80px;
+   margin-top : 80px;
+}
