@@ -95,7 +95,10 @@ h2 {
       align-items: flex-end; }
 
 li {
-  height: 420px; }
+  height: 420px;
+  background-size: auto 420px;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 footer {
   text-align: center;
