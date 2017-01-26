@@ -25,7 +25,13 @@ $(function() {
             //required since not all articles have an image
                 if(value.multimedia.length > 0){
 
-                  articleData += '<li style="background: url(' + value.multimedia[4].url + ');" class="article-container">'
+                  articleData += '<li '
+                  articleData += 'style="'
+                  articleData += 'background: url(' + value.multimedia[4].url + ');'
+                  articleData += 'background-size: auto 420px;'
+                  articleData += 'background-repeat: no-repeat;'
+                  articleData += 'background-position: center;'
+                  articleData += '"class="article-container">'
                   articleData += '<div class="article-text">'
                   articleData += value.abstract
                   articleData += '</div></li>'
@@ -33,6 +39,7 @@ $(function() {
                   //to get the title ^^^^
                   //console.log(value.multimedia[4].url);
                   //to get the image ^^^^^
+                  console.log(articleData);
                   }
 
                   //breaks out of the loop after 12 iterations

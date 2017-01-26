@@ -60,9 +60,12 @@ h2 {
 li{
     height: 420px;
     // text-align: center;
-    background: url('https://static01.nyt.com/images/2017/01/21/science/24tb-merian01/24tb-merian01-superJumbo.jpg') ;
-    background-size: cover;
-    background-position: center;
+    // background: url('https://static01.nyt.com/images/2017/01/21/science/24tb-merian01/24tb-merian01-superJumbo.jpg') ;
+    // background-size: contain;
+    // background-position: center;
+  //   background-repeat: no-repeat;
+    //  background-size: auto;
+    //  background-position: center;
 }
 
 footer {
