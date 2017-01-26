@@ -1,5 +1,7 @@
 $desktop-width: 1000px;
 $tablet-width: 600px;
+
+
 @mixin desktop {
   @media (min-width: $desktop-width) {
     @content;

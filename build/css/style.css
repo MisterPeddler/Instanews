@@ -48,7 +48,7 @@ table {
 body {
   background-color: black; }
 
-section {
+.dashboard {
   min-height: 87vh;
   display: -ms-flexbox;
   display: flex;
@@ -57,11 +57,11 @@ section {
   -ms-flex-pack: center;
       justify-content: center; }
   @media (min-width: 600px) {
-    section {
+    .dashboard {
       -ms-flex-direction: row;
           flex-direction: row; } }
   @media (min-width: 1000px) {
-    section {
+    .dashboard {
       -ms-flex-pack: start;
           justify-content: flex-start; } }
 
@@ -77,12 +77,28 @@ section {
     .topics {
       margin: 0; } }
 
-select {
+.drop-down-menu {
   margin: 0 auto; }
 
 h2 {
   color: white;
   padding: 15px; }
+
+.article-text {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.article-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end; }
+
+li {
+  height: 420px;
+  background: url("https://static01.nyt.com/images/2017/01/21/science/24tb-merian01/24tb-merian01-superJumbo.jpg");
+  background-size: cover;
+  background-position: center; }
 
 footer {
   text-align: center;
@@ -93,3 +109,6 @@ footer {
   bottom: 0;
   height: 80px;
   margin-top: 80px; }
+  @media (min-width: 1000px) {
+    footer {
+      text-align: left; } }
