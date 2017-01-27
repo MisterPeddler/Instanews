@@ -6,12 +6,16 @@ body {
     background-color: black;
 }
 
+a{
+  display:hidden;
+}
+
 .dashboard {
-     min-height: 87vh;
+    min-height: 87vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-      font-family: 'open_sans';
+    font-family: 'open_sans';
     @include tablet {
         flex-direction: row;
     }
@@ -19,7 +23,6 @@ body {
         justify-content: flex-start;
     }
 }
-
 
 .topics {
     display: flex;
@@ -43,28 +46,28 @@ h2 {
     padding: 15px;
 }
 
-
-.article-text{
-  font-family: 'open_sans';
-  color:white;
-  background-color: rgba(0, 0, 0, 0.6);
-  line-height: 1.5;
-  padding: 10px 10px;
+.article-text {
+    font-family: 'open_sans';
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+    padding: 10px;
 }
 
-.article-list{
-  display:flex;
-  flex-wrap: wrap;
+
+
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.article-container{
-    display:flex;
-    align-items:flex-end;
+.article-container {
+    display: flex;
+    align-items: flex-end;
     flex-basis: 100%;
     height: 420px;
     background-position: 50%;
     background-size: cover;
-
     @include tablet {
         flex-basis: 50%;
     }
@@ -73,14 +76,17 @@ h2 {
     }
 }
 
-footer {
-  font-family: 'open_sans';
+.article-container:hover{
+    cursor: pointer;
+}
 
+footer {
+    font-family: 'open_sans';
     text-align: center;
     color: #c2c2c2;
     display: block;
     width: 100%;
-     position: absolute;
+    position: absolute;
     bottom: 0;
     height: 80px;
     margin-top: 80px;

@@ -14,29 +14,22 @@ $(function() {
                 method: 'GET',
             }).done(function(data) {
                 var $articleList = $('.article-list');
-                var articleCount = 0;
                 var articleData = '';
                 $articleList.empty();
 
-                $.each(data.results, function(key, value) {
+                var listOfArticles = data.results.filter(function(item) {
+                    return item.multimedia.length > 0;
+                }).slice(0, 12);
 
-                    //required since not all articles have an image
-                    if (value.multimedia.length > 0) {
-                        articleData += '<li class="article-container"'
-                        articleData += 'style="'
-                        articleData += 'background-image: url(' + value.multimedia[4].url + ');'
-                        articleData += '">'
-                        articleData += '<div class="article-text">'
-                        articleData += value.abstract
-                        articleData += '</div></li>'
-
-                        articleCount++;
-                    }
-                    //breaks out of the loop after 12 iterations
-                    if (articleCount === 12) {
-                        return false;
-                    }
+                $.each(listOfArticles, function(key, value) {
+                    articleData += '<li class="article-container"'
+                    articleData += 'style="background-image: url(' + value.multimedia[4].url + ');">'
+                    articleData += '<a href="' + value.url + '" />'
+                    articleData += '<div class="article-text">'
+                    articleData += value.abstract
+                    articleData += '</div></li>'
                 });
+                
                 //css changes for after data is displayed
                 $('.dashboard').css('min-height', 'auto');
                 $('footer').css('position', 'relative');
@@ -45,8 +38,16 @@ $(function() {
 
             }).fail(function(err) {
                 throw err;
+                //TODO add some user feedback here
             });
         }
+    });
+
+    //article click handler.
+    //when an 'li' is clicked the url in the a is retrieved and used
+    //to open a new tab
+    $('.article-list').on('click', 'li', function() {
+        window.open($(this).find('a').attr('href'));
     });
 
 });
