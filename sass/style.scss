@@ -7,22 +7,17 @@ body {
 
 .dashboard {
      min-height: 87vh;
-    //height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     @include tablet {
         flex-direction: row;
-        // justify-content: flex-start;
     }
     @include desktop {
-        //  flex-direction:row;
         justify-content: flex-start;
     }
 }
 
-.logo{
-}
 
 .topics {
     display: flex;
@@ -38,14 +33,11 @@ body {
     margin: 0 auto;
 }
 
-.article-list{
-
-}
-
 h2 {
     color: white;
     padding: 15px;
 }
+
 
 .article-text{
   color:white;
@@ -57,15 +49,26 @@ h2 {
   align-items:flex-end;
 }
 
+.article-list{
+  display:flex;
+  flex-wrap: wrap;
+}
+
 li{
+    flex-basis: 100%;
     height: 420px;
-    background-size: auto 420px;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-position: 50%;
+    background-size: cover;
+
+    @include tablet {
+        flex-basis: 50%;
+    }
+    @include desktop {
+        flex-basis: 25%;
+    }
 }
 
 footer {
-
     text-align: center;
     color: #c2c2c2;
     display: block;

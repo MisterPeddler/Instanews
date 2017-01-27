@@ -13,9 +13,10 @@ $(function() {
                 url: url,
                 method: 'GET',
             }).done(function(data) {
-
+                var $articleList = $('.article-list');
+                var articleCount = 0;
                 var articleData = '';
-                $('.article-list').empty();
+                $articleList.empty();
 
                 $.each(data.results, function(key, value) {
 
@@ -23,21 +24,24 @@ $(function() {
                     if (value.multimedia.length > 0) {
                         articleData += '<li '
                         articleData += 'style="'
-                        articleData += 'background: url(' + value.multimedia[4].url + ');'
+                        articleData += 'background-image: url(' + value.multimedia[4].url + ');'
                         articleData += '"class="article-container">'
                         articleData += '<div class="article-text">'
                         articleData += value.abstract
                         articleData += '</div></li>'
+
+                        articleCount++;
                     }
                     //breaks out of the loop after 12 iterations
-                    if (key === 12) {
+                    if (articleCount === 12) {
                         return false;
                     }
                 });
                 //css changes for after data is displayed
                 $('.dashboard').css('min-height', 'auto');
                 $('footer').css('position', 'relative');
-                $('.article-list').append(articleData);
+
+                $articleList.append(articleData);
 
             }).fail(function(err) {
                 throw err;
