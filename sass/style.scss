@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'mixins';
+@import 'fonts';
 
 body {
     background-color: black;
@@ -10,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+      font-family: 'open_sans';
     @include tablet {
         flex-direction: row;
     }
@@ -31,6 +33,9 @@ body {
 
 .drop-down-menu {
     margin: 0 auto;
+    font-family: 'open_sans';
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 h2 {
@@ -40,13 +45,11 @@ h2 {
 
 
 .article-text{
+  font-family: 'open_sans';
   color:white;
   background-color: rgba(0, 0, 0, 0.6);
-}
-
-.article-container{
-  display:flex;
-  align-items:flex-end;
+  line-height: 1.5;
+  padding: 10px 10px;
 }
 
 .article-list{
@@ -54,7 +57,9 @@ h2 {
   flex-wrap: wrap;
 }
 
-li{
+.article-container{
+    display:flex;
+    align-items:flex-end;
     flex-basis: 100%;
     height: 420px;
     background-position: 50%;
@@ -69,6 +74,8 @@ li{
 }
 
 footer {
+  font-family: 'open_sans';
+
     text-align: center;
     color: #c2c2c2;
     display: block;

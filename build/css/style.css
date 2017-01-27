@@ -45,6 +45,34 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: 'open_sans';
+  src: url("../../fonts/opensans-bold-webfont.eot");
+  src: url("../../fonts/opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/opensans-bold-webfont.woff2") format("woff2"), url("../../fonts/opensans-bold-webfont.woff") format("woff"), url("../../fonts/opensans-bold-webfont.ttf") format("truetype"), url("../../fonts/opensans-bold-webfont.svg#open_sansbold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sans';
+  src: url("../../fonts/opensans-bolditalic-webfont.eot");
+  src: url("../../fonts/opensans-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/opensans-bolditalic-webfont.woff2") format("woff2"), url("../../fonts/opensans-bolditalic-webfont.woff") format("woff"), url("../../fonts/opensans-bolditalic-webfont.ttf") format("truetype"), url("../../fonts/opensans-bolditalic-webfont.svg#open_sansbold_italic") format("svg");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'open_sans';
+  src: url("../../fonts/opensans-light-webfont.eot");
+  src: url("../../fonts/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/opensans-light-webfont.woff2") format("woff2"), url("../../fonts/opensans-light-webfont.woff") format("woff"), url("../../fonts/opensans-light-webfont.ttf") format("truetype"), url("../../fonts/opensans-light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sans';
+  src: url("../../fonts/opensans-lightitalic-webfont.eot");
+  src: url("../../fonts/opensans-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/opensans-lightitalic-webfont.woff2") format("woff2"), url("../../fonts/opensans-lightitalic-webfont.woff") format("woff"), url("../../fonts/opensans-lightitalic-webfont.ttf") format("truetype"), url("../../fonts/opensans-lightitalic-webfont.svg#open_sanslight_italic") format("svg");
+  font-weight: normal;
+  font-style: italic; }
+
 body {
   background-color: black; }
 
@@ -55,7 +83,8 @@ body {
   -ms-flex-direction: column;
       flex-direction: column;
   -ms-flex-pack: center;
-      justify-content: center; }
+      justify-content: center;
+  font-family: 'open_sans'; }
   @media (min-width: 600px) {
     .dashboard {
       -ms-flex-direction: row;
@@ -78,21 +107,21 @@ body {
       margin: 0; } }
 
 .drop-down-menu {
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-family: 'open_sans';
+  font-size: 1.1rem;
+  font-weight: bold; }
 
 h2 {
   color: white;
   padding: 15px; }
 
 .article-text {
+  font-family: 'open_sans';
   color: white;
-  background-color: rgba(0, 0, 0, 0.6); }
-
-.article-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: end;
-      align-items: flex-end; }
+  background-color: rgba(0, 0, 0, 0.6);
+  line-height: 1.5;
+  padding: 10px 10px; }
 
 .article-list {
   display: -ms-flexbox;
@@ -100,22 +129,27 @@ h2 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
 
-li {
+.article-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   height: 420px;
   background-position: 50%;
   background-size: cover; }
   @media (min-width: 600px) {
-    li {
+    .article-container {
       -ms-flex-preferred-size: 50%;
           flex-basis: 50%; } }
   @media (min-width: 1000px) {
-    li {
+    .article-container {
       -ms-flex-preferred-size: 25%;
           flex-basis: 25%; } }
 
 footer {
+  font-family: 'open_sans';
   text-align: center;
   color: #c2c2c2;
   display: block;

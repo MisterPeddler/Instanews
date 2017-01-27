@@ -1,10 +1,10 @@
 $(function() {
 
     $('.drop-down-menu').on('change', function() {
-        var category = $(this).val();
+        var $category = $(this).val();
         //check to make sure we're not sending 'sections' to the NYT
-        if (category !== 'sections') {
-            var url = 'https://api.nytimes.com/svc/topstories/v2/' + category + '.json';
+        if ($category !== 'sections') {
+            var url = 'https://api.nytimes.com/svc/topstories/v2/' + $category + '.json';
             url += '?' + $.param({
                 'api-key': '06c14a236b5b478d8ee67228dff8fc9f'
             });
@@ -22,10 +22,10 @@ $(function() {
 
                     //required since not all articles have an image
                     if (value.multimedia.length > 0) {
-                        articleData += '<li '
+                        articleData += '<li class="article-container"'
                         articleData += 'style="'
                         articleData += 'background-image: url(' + value.multimedia[4].url + ');'
-                        articleData += '"class="article-container">'
+                        articleData += '">'
                         articleData += '<div class="article-text">'
                         articleData += value.abstract
                         articleData += '</div></li>'
