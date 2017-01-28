@@ -29,7 +29,7 @@ $(function() {
                     articleData += value.abstract
                     articleData += '</div></li>'
                 });
-                
+
                 //css changes for after data is displayed
                 $('.dashboard').css('min-height', 'auto');
                 $('footer').css('position', 'relative');

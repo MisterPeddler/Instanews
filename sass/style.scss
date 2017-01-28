@@ -6,22 +6,35 @@ body {
     background-color: black;
 }
 
-a{
-  display:hidden;
+a {
+    display: hidden;
 }
 
 .dashboard {
-    min-height: 87vh;
+    min-height: 89vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: 'open_sans';
     @include tablet {
+      padding-right: 110px;
         flex-direction: row;
     }
     @include desktop {
         justify-content: flex-start;
     }
+}
+
+.logo{
+  @include tablet {
+      width:24vw;
+  }
+  @include desktop {
+      width:auto;
+      margin-left: 30px;
+      justify-content: flex-start;
+  }
+
 }
 
 .topics {
@@ -32,17 +45,21 @@ a{
     @include tablet {
         margin: 0;
     }
+    @include desktop {
+      padding-left: 5vw;
+    }
 }
 
 .drop-down-menu {
     margin: 0 auto;
     font-family: 'open_sans';
     font-size: 1.1rem;
-    font-weight: bold;
+    padding: 0 50px;
 }
 
 h2 {
     color: white;
+    font-size: 0.8rem;
     padding: 15px;
 }
 
@@ -53,8 +70,6 @@ h2 {
     line-height: 1.5;
     padding: 10px;
 }
-
-
 
 .article-list {
     display: flex;
@@ -76,7 +91,7 @@ h2 {
     }
 }
 
-.article-container:hover{
+.article-container:hover {
     cursor: pointer;
 }
 
@@ -88,8 +103,9 @@ footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 80px;
-    margin-top: 80px;
+    height: 30px;
+    margin-top: 30px;
+    font-size: 0.9rem;
     @include desktop {
         text-align: left;
     }
