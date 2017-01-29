@@ -7,17 +7,17 @@ body {
 }
 
 a {
-    display: hidden;
+    display: none;
 }
 
 .dashboard {
-    min-height: 89vh;
+    height: 89vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: 'open_sans';
     @include tablet {
-      padding-right: 110px;
+        padding-right: 150px;
         flex-direction: row;
     }
     @include desktop {
@@ -25,16 +25,66 @@ a {
     }
 }
 
-.logo{
-  @include tablet {
-      width:24vw;
-  }
-  @include desktop {
-      width:auto;
-      margin-left: 30px;
-      justify-content: flex-start;
-  }
+.dashboard-with-articles {
+    height: auto;
+    padding: 30px 0 50px;
+    justify-content: center;
+    @include tablet {
+        margin: 0;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 35px 0 35px 60px;
+    }
+    @include desktop {
+        padding: 35px 0;
+    }
+}
 
+.user-feedback {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.error-report {
+    display: none;
+    font-family: 'open_sans';
+    text-align: center;
+    color: #c2c2c2;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 0 50px;
+}
+
+.loader {
+    display: none;
+    width: 80px;
+    margin: 0 auto;
+}
+
+.logo {
+    margin: 0 auto;
+    @include tablet {
+        width: 24vw;
+        max-width: 220px;
+        margin: 0;
+        padding-right: 20px;
+    }
+    @include desktop {
+        width: auto;
+        margin-left: 30px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+}
+
+.logo-with-articles {
+    width: 150px;
+    @include tablet {
+        margin: 0;
+        height: 70px;
+    }
+    @include desktop {}
 }
 
 .topics {
@@ -46,7 +96,15 @@ a {
         margin: 0;
     }
     @include desktop {
-      padding-left: 5vw;
+        width: auto;
+        margin-left: 5vw;
+    }
+}
+
+.topics-with-articles {
+    @include desktop {
+        padding-left: 20px;
+        margin-left: 0;
     }
 }
 
@@ -54,13 +112,21 @@ a {
     margin: 0 auto;
     font-family: 'open_sans';
     font-size: 1.1rem;
-    padding: 0 50px;
+    padding: 0 60px;
+    outline: none;
+    width: 120px;
 }
 
-h2 {
+.choose-section {
     color: white;
     font-size: 0.8rem;
-    padding: 15px;
+    padding: 15px 0;
+    text-align: center;
+    @include tablet {
+        font-size: 0.9rem;
+        padding: 0 0 15px;
+        text-align: left;
+    }
 }
 
 .article-text {
@@ -83,6 +149,10 @@ h2 {
     height: 420px;
     background-position: 50%;
     background-size: cover;
+
+    &:hover {
+        cursor: pointer;
+    }
     @include tablet {
         flex-basis: 50%;
     }
@@ -91,11 +161,7 @@ h2 {
     }
 }
 
-.article-container:hover {
-    cursor: pointer;
-}
-
-footer {
+.copyr {
     font-family: 'open_sans';
     text-align: center;
     color: #c2c2c2;
@@ -103,10 +169,17 @@ footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 30px;
-    margin-top: 30px;
+    height: 10vh;
+    margin-top: 10vh;
     font-size: 0.9rem;
     @include desktop {
         text-align: left;
+        padding-left: 40px;
     }
+}
+
+.copyr-with-articles {
+    position: relative;
+    margin: 35px 0 60px;
+    height: auto;
 }

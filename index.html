@@ -11,9 +11,9 @@
 <body>
 
     <section class="dashboard">
-        <img class="logo" src="images/nyt-logo.svg"/>
+        <img class="logo" src="images/nyt-logo.svg" />
         <div class="topics">
-            <h2>Choose a section:</h2>
+            <h2 class="choose-section">Choose a section:</h2>
             <select class="drop-down-menu">
              <option value="sections">Sections ...</option>
              <option value="home">Home</option>
@@ -24,12 +24,21 @@
              <option value="fashion">fashion</option>
             </select>
         </div>
+
+
     </section>
+
+
+    <section class="user-feedback">
+        <div class="error-report">Something has gone wrong, please try again...</div>
+        <img class="loader" src="../images/ajax-loader.gif" />
+    </section>
+
 
     <ul class="article-list"></ul>
 
-    <footer>
-      <div class="copyright">&#169; Copyright 2016 INSTANEWS</div>
+    <footer class="copyr">
+        <div>&#169; Copyright 2016 INSTANEWS</div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>

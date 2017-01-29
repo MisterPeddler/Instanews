@@ -1,5 +1,7 @@
 $(function() {
 
+
+
     $('.drop-down-menu').on('change', function() {
         var $category = $(this).val();
         //check to make sure we're not sending 'sections' to the NYT
@@ -12,6 +14,10 @@ $(function() {
             $.ajax({
                 url: url,
                 method: 'GET',
+            }).always(function() {
+                //show loading gif and hide error report
+                $('.loader').css('display', 'inline');
+                $('.error-report').css('display', 'none');
             }).done(function(data) {
                 var $articleList = $('.article-list');
                 var articleData = '';
@@ -30,24 +36,36 @@ $(function() {
                     articleData += '</div></li>'
                 });
 
-                //css changes for after data is displayed
-                $('.dashboard').css('min-height', 'auto');
-                $('footer').css('position', 'relative');
 
+
+                //css changes for after data is displayed
+                $('.dashboard').addClass('dashboard-with-articles');
+                $('.logo').addClass('logo-with-articles');
+                $('.topics').addClass('topics-with-articles');
+                $('.copyr').addClass('copyr-with-articles');
+
+                //hide loader gif
+                $('.loader').css('display', 'none');
+
+                //load data onto the dom
                 $articleList.append(articleData);
 
             }).fail(function(err) {
-                throw err;
-                //TODO add some user feedback here
+                //hide loading gif and show error report
+                $('.loader').css('display', 'none');
+                $('.eror-report').css('display', 'inline');
+
             });
         }
-    });
+    })
 
     //article click handler.
-    //when an 'li' is clicked the url in the a is retrieved and used
+    //when an <li> is clicked the url in the <a> is retrieved and used
     //to open a new tab
     $('.article-list').on('click', 'li', function() {
         window.open($(this).find('a').attr('href'));
     });
+
+
 
 });
