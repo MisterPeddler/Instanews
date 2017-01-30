@@ -1,9 +1,13 @@
 @import 'reset';
+@import 'selectric';
+@import 'variables';
 @import 'mixins';
 @import 'fonts';
 
 body {
-    background-color: black;
+    background-color: $background-colour;
+    font-size: $font-size;
+    font-family: $font-stack;
 }
 
 a {
@@ -15,7 +19,6 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: 'open_sans';
     @include tablet {
         padding-right: 150px;
         flex-direction: row;
@@ -48,9 +51,8 @@ a {
 
 .error-report {
     display: none;
-    font-family: 'open_sans';
     text-align: center;
-    color: #c2c2c2;
+    color: $footer-text-colour;
     font-size: 1.5rem;
     line-height: 1.5;
     padding: 0 50px;
@@ -109,16 +111,15 @@ a {
 }
 
 .drop-down-menu {
-    margin: 0 auto;
-    font-family: 'open_sans';
-    font-size: 1.1rem;
-    padding: 0 60px;
-    outline: none;
-    width: 120px;
+    // margin: 0 auto;
+    // font-size: 4rem;
+    // padding: 0 300px;
+    // outline: none;
+    //width: 2000px;
 }
 
 .choose-section {
-    color: white;
+    color: $body-text-colour;
     font-size: 0.8rem;
     padding: 15px 0;
     text-align: center;
@@ -130,12 +131,11 @@ a {
 }
 
 .article-text {
-    font-family: 'open_sans';
-    color: white;
+    color: $body-text-colour;
     background-color: rgba(0, 0, 0, 0.6);
     line-height: 1.5;
     padding: 10px;
-    width:100%;
+    width: 100%;
     display: block;
 }
 
@@ -164,9 +164,8 @@ a {
 }
 
 .copyr {
-    font-family: 'open_sans';
     text-align: center;
-    color: #c2c2c2;
+    color: $footer-text-colour;
     display: block;
     width: 100%;
     position: absolute;
