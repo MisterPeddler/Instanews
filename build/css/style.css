@@ -205,7 +205,9 @@ a {
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
   line-height: 1.5;
-  padding: 10px; }
+  padding: 10px;
+  width: 100%;
+  display: block; }
 
 .article-list {
   display: -ms-flexbox;

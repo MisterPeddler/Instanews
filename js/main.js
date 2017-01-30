@@ -1,9 +1,54 @@
 $(function() {
 
+//TODO fix css for drop down sliding
+//TODO sassify
+//TODO stretch goals
 
+//DOM varuable declarations
+var $loader = $('.loader');
+var $errorReport = $('.error-report');
+var $dashboard = $('.dashboard');
+var $logo = $('.logo');
+var $topics = $('.topics');
+var $copyr = $('.copyr');
+
+var $articleList = $('.article-list');
+
+
+//Function Declarations
+function showArticleLayout(){
+  //reposition elements to article display
+  $dashboard.addClass('dashboard-with-articles');
+  $logo.addClass('logo-with-articles');
+  $topics.addClass('topics-with-articles');
+  $copyr.addClass('copyr-with-articles');
+}
+
+function showErrorMessage(){
+  $errorReport.css('display','inline');
+}
+
+function hideErrorMessage(){
+  $errorReport.css('display','none');
+}
+
+function showLoadingWheel(){
+  $loader.css('display','inline');
+}
+
+function hideLoadingWheel(){
+  $loader.css('display','none');
+}
 
     $('.drop-down-menu').on('change', function() {
-        var $category = $(this).val();
+      var $category = $(this).val();
+
+      showArticleLayout();
+      showLoadingWheel();
+      hideErrorMessage();
+      $articleList.empty();
+
+
         //check to make sure we're not sending 'sections' to the NYT
         if ($category !== 'sections') {
             var url = 'https://api.nytimes.com/svc/topstories/v2/' + $category + '.json';
@@ -14,14 +59,9 @@ $(function() {
             $.ajax({
                 url: url,
                 method: 'GET',
-            }).always(function() {
-                //show loading gif and hide error report
-                $('.loader').css('display', 'inline');
-                $('.error-report').css('display', 'none');
             }).done(function(data) {
-                var $articleList = $('.article-list');
                 var articleData = '';
-                $articleList.empty();
+
 
                 var listOfArticles = data.results.filter(function(item) {
                     return item.multimedia.length > 0;
@@ -36,24 +76,15 @@ $(function() {
                     articleData += '</div></li>'
                 });
 
-
-
-                //css changes for after data is displayed
-                $('.dashboard').addClass('dashboard-with-articles');
-                $('.logo').addClass('logo-with-articles');
-                $('.topics').addClass('topics-with-articles');
-                $('.copyr').addClass('copyr-with-articles');
-
-                //hide loader gif
-                $('.loader').css('display', 'none');
+                hideLoadingWheel();
 
                 //load data onto the dom
                 $articleList.append(articleData);
 
-            }).fail(function(err) {
+            }).fail(function() {
                 //hide loading gif and show error report
-                $('.loader').css('display', 'none');
-                $('.eror-report').css('display', 'inline');
+                hideLoadingWheel();
+                showErrorMessage();
 
             });
         }
