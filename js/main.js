@@ -1,10 +1,4 @@
 $(function() {
-
-    //TODO fix css for drop down sliding
-    //TODO sassify
-    //TODO stretch goals
-    //$('.anim-spacer').hide();
-
     //jQuery variable declarations
     var $loader = $('.loader');
     var $errorReport = $('.error-report');
@@ -43,11 +37,11 @@ $(function() {
     //initialize selectric
     $('.drop-down-menu').selectric();
 
+    //Select on-change handler
     $('.drop-down-menu').on('change', function() {
+
         var $category = $('.drop-down-menu').val();
 
-
-        //$articleList.hide();
         //check to make sure we're not sending 'sections' to the NYT
         if ($category !== 'sections') {
 
@@ -69,6 +63,7 @@ $(function() {
 
                 var articleData = '';
 
+                //filter returned json object to only include 12 items with photos
                 var listOfArticles = data.results.filter(function(item) {
                     return item.multimedia.length > 0;
                 }).slice(0, 12);
@@ -88,8 +83,6 @@ $(function() {
                 $articleList.append(articleData);
 
                  $('.anim-spacer').show().slideUp('slow');
-                //$('.cloak-of-invisvbility').show('slow');
-                //^^^^use this for portfolio week
 
             }).fail(function() {
                 //hide loading gif and show error report
