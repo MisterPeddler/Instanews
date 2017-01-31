@@ -1,0 +1,62 @@
+
+.error-report {
+    display: none;
+    text-align: center;
+    color: $footer-text-colour;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 0 50px;
+}
+
+.loader {
+    display: none;
+    width: 80px;
+    margin: 0 auto;
+}
+
+
+.article-text {
+    box-sizing: border-box;
+    padding: 0 10px;
+    color: $body-text-colour;
+    background-color: rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+    transition: height 0.2s linear;
+    width: 100%;
+    position: absolute;
+    height: 0;
+    bottom: 0;
+}
+
+.anim-spacer {
+    height: 100vh;
+    display: none;
+}
+//this brings the article into view
+.article-container:hover .article-text {
+    height: 40%;
+}
+
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article-container {
+    position: relative;
+    flex-basis: 100%;
+    height: 420px;
+    background-position: 50%;
+    background-size: cover;
+    overflow: hidden;
+
+    &:hover {
+        cursor: pointer;
+    }
+    @include tablet {
+        flex-basis: 50%;
+    }
+    @include desktop {
+        flex-basis: 25%;
+    }
+}

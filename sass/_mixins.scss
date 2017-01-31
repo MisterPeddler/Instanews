@@ -13,3 +13,7 @@ $tablet-width: 600px;
     @content;
   }
 }
+
+@mixin transition-anim{
+  transition: all 0.4s linear;
+}

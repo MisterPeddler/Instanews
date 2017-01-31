@@ -1,0 +1,104 @@
+.dashboard {
+    height: 89vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: height 0.2s linear;
+    @include transition-anim;
+    @include tablet {
+         @include transition-anim;
+        padding-right: 150px;
+        flex-direction: row;
+    }
+    @include desktop {
+         @include transition-anim;
+        justify-content: flex-start;
+    }
+}
+
+.dashboard-with-articles {
+    height: auto;
+    padding: 30px 0 50px;
+    justify-content: center;
+    @include transition-anim;
+    @include tablet {
+         @include transition-anim;
+        margin: 0;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 35px 0 35px 60px;
+    }
+    @include desktop {
+         @include transition-anim;
+        padding: 35px 0;
+    }
+}
+
+.user-feedback {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    margin: 0 auto;
+    @include tablet {
+         @include transition-anim;
+        width: 24vw;
+        max-width: 220px;
+        margin: 0;
+        padding-right: 20px;
+    }
+    @include desktop {
+         @include transition-anim;
+        width: auto;
+        margin-left: 30px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+}
+
+.logo-with-articles {
+    width: 150px;
+    @include tablet {
+        margin: 0;
+        height: 70px;
+    }
+    @include desktop {}
+}
+
+.topics {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    @include tablet {
+         @include transition-anim;
+        margin: 0;
+    }
+    @include desktop {
+         @include transition-anim;
+        width: auto;
+        margin-left: 5vw;
+    }
+}
+
+.topics-with-articles {
+    @include desktop {
+        padding-left: 20px;
+        margin-left: 0;
+    }
+}
+
+.choose-section {
+    color: $body-text-colour;
+    font-size: 0.8rem;
+    padding: 15px 0;
+    text-align: center;
+    @include tablet {
+         @include transition-anim;
+        font-size: 0.9rem;
+        padding: 0 0 15px;
+        text-align: left;
+    }
+}

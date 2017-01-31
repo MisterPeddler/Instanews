@@ -3,6 +3,7 @@ $(function() {
     //TODO fix css for drop down sliding
     //TODO sassify
     //TODO stretch goals
+    //$('.anim-spacer').hide();
 
     //jQuery variable declarations
     var $loader = $('.loader');
@@ -12,6 +13,7 @@ $(function() {
     var $topics = $('.topics');
     var $copyr = $('.copyr');
     var $articleList = $('.article-list');
+    var $cloakOfInvisibility = $('.cloak-of-invisvbility');
 
     //Function Declarations
     function showArticleLayout() {
@@ -44,12 +46,15 @@ $(function() {
     $('.drop-down-menu').on('change', function() {
         var $category = $('.drop-down-menu').val();
 
+
+        //$articleList.hide();
         //check to make sure we're not sending 'sections' to the NYT
         if ($category !== 'sections') {
 
           showArticleLayout();
           showLoadingWheel();
           hideErrorMessage();
+          $cloakOfInvisibility.hide('slow');
           $articleList.empty();
 
             var url = 'https://api.nytimes.com/svc/topstories/v2/' + $category + '.json';
@@ -82,6 +87,9 @@ $(function() {
 
                 $articleList.append(articleData);
 
+                 $('.anim-spacer').show().slideUp('slow');
+                //$('.cloak-of-invisvbility').show('slow');
+                //^^^^use this for portfolio week
 
             }).fail(function() {
                 //hide loading gif and show error report

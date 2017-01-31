@@ -1,0 +1,21 @@
+.copyr {
+    text-align: center;
+    color: $footer-text-colour;
+    display: block;
+    width: 100%;
+    // bottom: 0;
+    // height: 10vh;
+    // margin-top: 10vh;
+    font-size: 0.9rem;
+    @include desktop {
+        text-align: left;
+        padding-left: 40px;
+    }
+}
+
+.copyr-with-articles {
+    // position: absolute;
+    bottom:0;
+    margin: 35px 0 60px;
+    height: auto;
+}
