@@ -42,7 +42,7 @@ $(function() {
     $('.drop-down-menu').selectric();
 
     $('.drop-down-menu').on('change', function() {
-        var $category = $(this).val();
+        var $category = $('.drop-down-menu').val();
 
         //check to make sure we're not sending 'sections' to the NYT
         if ($category !== 'sections') {
@@ -77,11 +77,11 @@ $(function() {
                     articleData += '</div></li>'
                 });
 
-
-
                 //hide the loading wheel and load data onto the dom
                 hideLoadingWheel();
+
                 $articleList.append(articleData);
+
 
             }).fail(function() {
                 //hide loading gif and show error report
@@ -98,7 +98,5 @@ $(function() {
     $('.article-list').on('click', 'li', function() {
         window.open($(this).find('a').attr('href'));
     });
-
-
 
 });

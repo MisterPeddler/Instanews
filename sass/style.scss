@@ -110,14 +110,6 @@ a {
     }
 }
 
-.drop-down-menu {
-    // margin: 0 auto;
-    // font-size: 4rem;
-    // padding: 0 300px;
-    // outline: none;
-    //width: 2000px;
-}
-
 .choose-section {
     color: $body-text-colour;
     font-size: 0.8rem;
@@ -134,9 +126,16 @@ a {
     color: $body-text-colour;
     background-color: rgba(0, 0, 0, 0.6);
     line-height: 1.5;
-    padding: 10px;
-    width: 100%;
-    display: block;
+    padding: 0 10px;
+    transition: height 0.2s linear;
+    position:absolute;
+    height:0;
+    bottom:0;
+}
+
+//this brings the article into view
+.article-container:hover .article-text{
+  height:40%;
 }
 
 .article-list {
@@ -145,12 +144,12 @@ a {
 }
 
 .article-container {
-    display: flex;
-    align-items: flex-end;
+    position:relative;
     flex-basis: 100%;
     height: 420px;
     background-position: 50%;
     background-size: cover;
+    overflow: hidden;
 
     &:hover {
         cursor: pointer;
@@ -168,7 +167,6 @@ a {
     color: $footer-text-colour;
     display: block;
     width: 100%;
-    position: absolute;
     bottom: 0;
     height: 10vh;
     margin-top: 10vh;

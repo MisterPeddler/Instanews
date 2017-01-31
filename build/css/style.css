@@ -412,9 +412,14 @@ a {
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
   line-height: 1.5;
-  padding: 10px;
-  width: 100%;
-  display: block; }
+  padding: 0 10px;
+  transition: height 0.2s linear;
+  position: absolute;
+  height: 0;
+  bottom: 0; }
+
+.article-container:hover .article-text {
+  height: 40%; }
 
 .article-list {
   display: -ms-flexbox;
@@ -423,15 +428,13 @@ a {
       flex-wrap: wrap; }
 
 .article-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: end;
-      align-items: flex-end;
+  position: relative;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   height: 420px;
   background-position: 50%;
-  background-size: cover; }
+  background-size: cover;
+  overflow: hidden; }
   .article-container:hover {
     cursor: pointer; }
   @media (min-width: 600px) {
@@ -448,7 +451,6 @@ a {
   color: #c2c2c2;
   display: block;
   width: 100%;
-  position: absolute;
   bottom: 0;
   height: 10vh;
   margin-top: 10vh;
