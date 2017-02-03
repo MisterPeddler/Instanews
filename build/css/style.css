@@ -56,7 +56,7 @@ table {
   width: 200%; }
 
 .selectric {
-  border: 1px solid white;
+  border: .5px solid white;
   background: #2C3E50;
   position: relative;
   border-radius: 0px;
@@ -71,7 +71,7 @@ table {
   font-size: 12px;
   line-height: 38px;
   color: #FFFFFF;
-  height: 38px; }
+  height: 39px; }
 
 .selectric .button {
   background: #2C3E50;
@@ -234,7 +234,7 @@ table {
 
 .selectric-items .disabled {
   filter: alpha(opacity=50);
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: default !important;
   background: none !important;
   color: #666 !important;
