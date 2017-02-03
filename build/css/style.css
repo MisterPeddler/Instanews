@@ -234,7 +234,7 @@ table {
 
 .selectric-items .disabled {
   filter: alpha(opacity=50);
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: default !important;
   background: none !important;
   color: #666 !important;
@@ -470,7 +470,7 @@ a {
   color: #c2c2c2;
   display: block;
   width: 100%;
-  font-size: 0.9rem; }
+  font-size: 1rem; }
   @media (min-width: 1000px) {
     .copyr {
       text-align: left;
@@ -478,5 +478,5 @@ a {
 
 .copyr-with-articles {
   bottom: 0;
-  margin: 35px 0 60px;
+  margin: 36px 0 60px;
   height: auto; }
