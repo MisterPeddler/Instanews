@@ -7,7 +7,6 @@ $(function() {
     var $topics = $('.topics');
     var $copyr = $('.copyr');
     var $articleList = $('.article-list');
-    var $cloakOfInvisibility = $('.cloak-of-invisvbility');
 
     //Function Declarations
     function showArticleLayout() {
@@ -48,7 +47,7 @@ $(function() {
           showArticleLayout();
           showLoadingWheel();
           hideErrorMessage();
-          $cloakOfInvisibility.hide('slow');
+
           $articleList.empty();
 
             var url = 'https://api.nytimes.com/svc/topstories/v2/' + $category + '.json';
