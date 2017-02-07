@@ -56,7 +56,7 @@ table {
   width: 200%; }
 
 .selectric {
-  border: 1px solid white;
+  border: .5px solid white;
   background: #2C3E50;
   position: relative;
   border-radius: 0px;
@@ -71,7 +71,7 @@ table {
   font-size: 12px;
   line-height: 38px;
   color: #FFFFFF;
-  height: 38px; }
+  height: 39px; }
 
 .selectric .button {
   background: #2C3E50;
@@ -470,7 +470,7 @@ a {
   color: #c2c2c2;
   display: block;
   width: 100%;
-  font-size: 0.9rem; }
+  font-size: 1rem; }
   @media (min-width: 1000px) {
     .copyr {
       text-align: left;
@@ -478,5 +478,5 @@ a {
 
 .copyr-with-articles {
   bottom: 0;
-  margin: 35px 0 60px;
+  margin: 36px 0 60px;
   height: auto; }
