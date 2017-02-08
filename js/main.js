@@ -1,12 +1,13 @@
 $(function() {
     //jQuery variable declarations
-    var $loader = $('.loader');
-    var $errorReport = $('.error-report');
-    var $dashboard = $('.dashboard');
-    var $logo = $('.logo');
-    var $topics = $('.topics');
-    var $copyr = $('.copyr');
-    var $articleList = $('.article-list');
+    const $loader = $('.loader');
+    const $errorReport = $('.error-report');
+    const $dashboard = $('.dashboard');
+    const $logo = $('.logo');
+    const $topics = $('.topics');
+    const $copyr = $('.copyr');
+    const $articleList = $('.article-list');
+
 
     //Function Declarations
     function showArticleLayout() {
@@ -37,9 +38,9 @@ $(function() {
     $('.drop-down-menu').selectric();
 
     //Select on-change handler
-    $('.drop-down-menu').on('change', function() {
+    $('.drop-down-menu').on('change', () => {
 
-        var $category = $('.drop-down-menu').val();
+        const $category = $('.drop-down-menu').val();
 
         //check to make sure we're not sending 'sections' to the NYT
         if ($category !== 'sections') {
@@ -50,7 +51,7 @@ $(function() {
 
           $articleList.empty();
 
-            var url = 'https://api.nytimes.com/svc/topstories/v2/' + $category + '.json';
+            let url = `https://api.nytimes.com/svc/topstories/v2/${$category}.json`;
             url += '?' + $.param({
                 'api-key': '06c14a236b5b478d8ee67228dff8fc9f'
             });
@@ -58,22 +59,23 @@ $(function() {
             $.ajax({
                 url: url,
                 method: 'GET',
-            }).done(function(data) {
+            }).done( data => {
 
-                var articleData = '';
+                let articleData = '';
 
                 //filter returned json object to only include 12 items with photos
-                var listOfArticles = data.results.filter(function(item) {
+                let listOfArticles = data.results.filter( item => {
                     return item.multimedia.length > 0;
                 }).slice(0, 12);
 
-                $.each(listOfArticles, function(key, value) {
-                    articleData += '<li class="article-container"'
-                    articleData += 'style="background-image: url(' + value.multimedia[4].url + ');">'
-                    articleData += '<a href="' + value.url + '" />'
-                    articleData += '<div class="article-text">'
-                    articleData += value.abstract
-                    articleData += '</div></li>'
+                $.each(listOfArticles, (key, value) => {
+                    articleData +=
+                    `<li class="article-container"
+                     style="background-image: url( ${value.multimedia[4].url});">
+                     <a href="${value.url}" />
+                     <div class="article-text">
+                     ${value.abstract}
+                     </div></li>`;
                 });
 
                 //hide the loading wheel and load data onto the dom
@@ -83,19 +85,19 @@ $(function() {
 
                  $('.anim-spacer').show().slideUp('slow');
 
-            }).fail(function() {
+            }).fail( () => {
                 //hide loading gif and show error report
                 hideLoadingWheel();
                 showErrorMessage();
 
             });
         }
-    })
+    });
 
     //article click handler.
     //when an <li> is clicked the url in the <a> is retrieved and used
     //to open a new tab
-    $('.article-list').on('click', 'li', function() {
+    $('.article-list').on('click', 'li', () => {
         window.open($(this).find('a').attr('href'));
     });
 
