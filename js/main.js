@@ -9,30 +9,6 @@ $(function() {
     const $articleList = $('.article-list');
 
 
-    //Function Declarations
-    function showArticleLayout() {
-        //reposition elements for article display
-        $dashboard.addClass('dashboard-with-articles');
-        $logo.addClass('logo-with-articles');
-        $topics.addClass('topics-with-articles');
-        $copyr.addClass('copyr-with-articles');
-    }
-
-    function showErrorMessage() {
-        $errorReport.css('display', 'inline');
-    }
-
-    function hideErrorMessage() {
-        $errorReport.css('display', 'none');
-    }
-
-    function showLoadingWheel() {
-        $loader.css('display', 'inline');
-    }
-
-    function hideLoadingWheel() {
-        $loader.css('display', 'none');
-    }
 
   //this is a comment
     $('.drop-down-menu').selectric();
@@ -100,5 +76,31 @@ $(function() {
     $('.article-list').on('click', 'li', () => {
         window.open($(this).find('a').attr('href'));
     });
+
+
+        //Function Declarations
+        function showArticleLayout() {
+            //reposition elements for article display
+            $dashboard.addClass('dashboard-with-articles');
+            $logo.addClass('logo-with-articles');
+            $topics.addClass('topics-with-articles');
+            $copyr.addClass('copyr-with-articles');
+        }
+
+        function showErrorMessage() {
+            $errorReport.css('display', 'inline');
+        }
+
+        function hideErrorMessage() {
+            $errorReport.css('display', 'none');
+        }
+
+        function showLoadingWheel() {
+            $loader.css('display', 'inline');
+        }
+
+        function hideLoadingWheel() {
+            $loader.css('display', 'none');
+        }
 
 });
