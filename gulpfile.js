@@ -18,7 +18,7 @@ var plumberErrorHandler = {
 };
 
 gulp.task('scripts', ['lint'], function() {
-    gulp.src('./js/*.js') // What files do we want gulp to consume?
+    gulp.src('./js/*.js') 
         .pipe(plumber(plumberErrorHandler))
         .pipe(babel({
             presets: ['es2015']

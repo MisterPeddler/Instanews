@@ -34,11 +34,11 @@ $(function() {
         $loader.css('display', 'none');
     }
 
-    //initialize selectric
+  //this is a comment
     $('.drop-down-menu').selectric();
 
     //Select on-change handler
-    $('.drop-down-menu').on('change', () => {
+    $('.drop-down-menu').on('change', ()=> {
 
         const $category = $('.drop-down-menu').val();
 
