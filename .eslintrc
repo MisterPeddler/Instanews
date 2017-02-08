@@ -1,7 +1,6 @@
 {
   "extends": "eslint:recommended",
   "parser": "babel-eslint",
-  "thing":"tobeignored"
   "rules": {
     "no-alert": 1,
     "camelcase": 1,

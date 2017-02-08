@@ -48,7 +48,7 @@ $(function() {
                     articleData +=
                     `<li class="article-container"
                      style="background-image: url( ${value.multimedia[4].url});">
-                     <a href="${value.url}" />
+                     <a class="link" href="${value.url}" />
                      <div class="article-text">
                      ${value.abstract}
                      </div></li>`;
