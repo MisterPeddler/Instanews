@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
-    cssnano = require('gulp-cssnano');
+    cssnano = require('gulp-cssnano'),
+    babel = require('gulp-babel');
 
 var plumberErrorHandler = {
     errorHandler: notify.onError({
@@ -18,13 +19,24 @@ var plumberErrorHandler = {
 
 gulp.task('scripts', ['lint'], function() {
     gulp.src('./js/*.js') // What files do we want gulp to consume?
-        //.pipe(plumber(plumberErrorHandler))
+        .pipe(plumber(plumberErrorHandler))
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(uglify()) // Call the uglify function on these files
         .pipe(rename({
             extname: '.min.js'
         })) // Rename the uglified file
-        .pipe(gulp.dest('./build/js')) // Where do we put the result?
+        .pipe(gulp.dest('./build/js')); // Where do we put the result?
 });
+
+// gulp.task('babel', () => {
+//     return gulp.src('./js/*.js')
+//         .pipe(babel({
+//             presets: ['es2015']
+//         }))
+//         .pipe(gulp.dest('build/js'));
+// });
 
 gulp.task('sass', function() {
    gulp.src('./sass/style.scss')
@@ -41,7 +53,8 @@ gulp.task('sass', function() {
 
 gulp.task('watch', function() {
     gulp.watch(['index.html','js/*.js'] ,['scripts']);
-    gulp.watch('sass/*scss', ['sass'])
+    //gulp.watch(['index.html','js/*.js'] ,['babel']);
+    gulp.watch('sass/*scss', ['sass']);
 });
 
 gulp.task('browserSync', function() {
