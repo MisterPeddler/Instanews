@@ -30,13 +30,6 @@ gulp.task('scripts', ['lint'], function() {
         .pipe(gulp.dest('./build/js')); // Where do we put the result?
 });
 
-// gulp.task('babel', () => {
-//     return gulp.src('./js/*.js')
-//         .pipe(babel({
-//             presets: ['es2015']
-//         }))
-//         .pipe(gulp.dest('build/js'));
-// });
 
 gulp.task('sass', function() {
    gulp.src('./sass/style.scss')
